@@ -26,14 +26,14 @@ export default function Sidebar({ onSelectConversation, onNewConversation, activ
   if (!currentUser) return null;
 
   return (
-    <aside className="flex h-full w-full flex-col border-r border-slate-200 bg-white/80 dark:border-slate-800 dark:bg-slate-950/75 backdrop-blur-xl">
-      <div className="border-b border-slate-200 p-4 dark:border-slate-800">
+    <aside className="flex h-full w-full flex-col border-r border-[#ecd9cc] bg-[#fffaf5]/90 dark:border-[#3b2f2d] dark:bg-[#201c1a]/90 backdrop-blur-xl">
+      <div className="border-b border-[#ecd9cc] bg-[#f7efe6] p-4 dark:border-[#3b2f2d] dark:bg-[#2a221f]">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <UserAvatar user={currentUser} size="sm" />
             <div>
-              <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">{currentUser.name}</p>
-              <p className="text-xs text-slate-500 dark:text-slate-400">{currentUser.username}</p>
+              <p className="text-sm font-semibold text-[#2f241f] dark:text-[#f7efe9]">{currentUser.name}</p>
+              <p className="text-xs text-[#725f58] dark:text-[#d7c1b5]">{currentUser.username}</p>
             </div>
           </div>
           <ThemeToggle />
@@ -43,7 +43,7 @@ export default function Sidebar({ onSelectConversation, onNewConversation, activ
           <button
             type="button"
             onClick={onNewConversation}
-            className="inline-flex flex-1 items-center justify-center gap-2 rounded-2xl bg-slate-900 px-3 py-2.5 text-sm font-medium text-white transition hover:bg-slate-800 dark:bg-sky-500 dark:text-slate-950 dark:hover:bg-sky-400"
+            className="inline-flex flex-1 items-center justify-center gap-2 rounded-2xl bg-[#d9775f] px-3 py-2.5 text-sm font-medium text-white transition hover:bg-[#c7654e] dark:bg-[#e6987b] dark:text-[#2b201d] dark:hover:bg-[#f0b39d]"
           >
             <MessageSquarePlus className="h-4 w-4" />
             New chat
@@ -51,7 +51,7 @@ export default function Sidebar({ onSelectConversation, onNewConversation, activ
           <button
             type="button"
             aria-label="Settings"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-[#ecd9cc] bg-white text-[#725f58] dark:border-[#524643] dark:bg-[#2d2623] dark:text-[#f3e4dc]"
           >
             <Settings className="h-4 w-4" />
           </button>
@@ -63,8 +63,8 @@ export default function Sidebar({ onSelectConversation, onNewConversation, activ
       </div>
 
       <div className="flex items-center justify-between px-4 pb-2 pt-4">
-        <div className="flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
-          <Sparkles className="h-4 w-4 text-sky-500" />
+        <div className="flex items-center gap-2 text-sm font-semibold text-[#5c4e4a] dark:text-[#f3e4dc]">
+          <Sparkles className="h-4 w-4 text-[#d9775f]" />
           Recent chats
         </div>
       </div>
@@ -86,8 +86,8 @@ export default function Sidebar({ onSelectConversation, onNewConversation, activ
                 onClick={() => onSelectConversation(conversation.id)}
                 className={`flex w-full items-center gap-3 rounded-2xl border p-3 text-left transition ${
                   active
-                    ? 'border-sky-200 bg-sky-50 dark:border-sky-900 dark:bg-sky-950/40'
-                    : 'border-transparent bg-transparent hover:bg-slate-100 dark:hover:bg-slate-900/80'
+                    ? 'border-[#f2c7b8] bg-[#fef0e6] dark:border-[#664a44] dark:bg-[#312422]'
+                    : 'border-transparent bg-transparent hover:bg-[#f5ece5] dark:hover:bg-[#2a221f]'
                 }`}
               >
                 <div className="relative">
@@ -95,22 +95,22 @@ export default function Sidebar({ onSelectConversation, onNewConversation, activ
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center justify-between gap-2">
-                    <p className="truncate text-sm font-semibold text-slate-900 dark:text-slate-100">{participant?.name || 'Unknown user'}</p>
+                    <p className="truncate text-sm font-semibold text-[#2f241f] dark:text-[#f7efe9]">{participant?.name || 'Unknown user'}</p>
                     {unread > 0 && (
-                      <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-sky-500 px-1 text-[10px] font-bold text-white">
+                      <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-[#d9775f] px-1 text-[10px] font-bold text-white">
                         {unread}
                       </span>
                     )}
                   </div>
-                  <p className="truncate text-xs text-slate-500 dark:text-slate-400">
+                  <p className="truncate text-xs text-[#725f58] dark:text-[#d7c1b5]">
                     {conversation.lastMessage || 'No messages yet'}
                   </p>
                 </div>
                 <div className="flex flex-col items-end gap-1">
-                  <span className="text-[10px] text-slate-400 dark:text-slate-500">
+                  <span className="text-[10px] text-[#a38c82] dark:text-[#bfa69c]">
                     {conversation.updatedAt ? new Date(conversation.updatedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : ''}
                   </span>
-                  <MessageSquare className="h-3.5 w-3.5 text-slate-300 dark:text-slate-600" />
+                  <MessageSquare className="h-3.5 w-3.5 text-[#d0b3a4] dark:text-[#8d756d]" />
                 </div>
               </button>
             );

@@ -6,8 +6,21 @@
   font-family: Inter, 'Segoe UI', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #111827;
-  background: #f8fafc;
+  color: #2f241f;
+  background: #f7f1ea;
+  --bg-soft: #f7f1ea;
+  --bg-card: #fffaf5;
+  --bg-panel: #f4e9df;
+  --bg-strong: #2f241f;
+  --primary: #d9775f;
+  --primary-soft: #fbe3da;
+  --primary-strong: #ba5d48;
+  --accent: #6f8f7a;
+  --accent-soft: #e7efe9;
+  --text-main: #2f241f;
+  --text-muted: #725f58;
+  --line: rgba(105, 82, 71, 0.14);
+  --shadow-soft: 0 16px 40px rgba(123, 88, 72, 0.14);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -15,22 +28,30 @@
 }
 
 html {
-  background: #f8fafc;
+  background: var(--bg-soft);
 }
 
 html.dark {
-  background: #020817;
+  background: #1d1715;
+  --bg-soft: #1d1715;
+  --bg-card: #2a221f;
+  --bg-panel: #312a27;
+  --bg-strong: #f2e7df;
+  --primary: #e6987b;
+  --primary-soft: rgba(230, 152, 123, 0.15);
+  --accent: #9bb8a3;
+  --accent-soft: rgba(155, 184, 163, 0.15);
+  --text-main: #f7efe9;
+  --text-muted: #d7c1b5;
+  --line: rgba(250, 233, 225, 0.12);
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: #f8fafc;
-}
-
-html.dark body {
-  background: #020817;
+  background: var(--bg-soft);
+  color: var(--text-main);
 }
 
 * {
@@ -57,6 +78,6 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.7);
+  background: rgba(148, 116, 98, 0.45);
   border-radius: 9999px;
 }

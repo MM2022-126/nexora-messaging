@@ -115,7 +115,7 @@ export default function DashboardLayout() {
   };
 
   return (
-    <div className="flex min-h-screen bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <div className="flex min-h-screen bg-[#f6efe8] text-[#2f241f] dark:bg-[#1d1715] dark:text-[#f7efe9]">
       <div className="mx-auto flex h-screen w-full max-w-[1600px] gap-4 p-3 sm:p-4 lg:p-5">
         <aside className={`${mobileView === 'chat' ? 'hidden' : 'block'} w-full lg:block lg:w-[360px]`}>
           <Sidebar
