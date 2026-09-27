@@ -4,25 +4,21 @@ import { getStorage, setStorage } from '../utils/storage';
 const ThemeContext = createContext(null);
 
 const resolveInitialTheme = () => {
-  const stored = getStorage('messaging_theme', 'system');
-  if (stored === 'dark' || stored === 'light' || stored === 'system') {
-    return stored;
-  }
-
-  return 'system';
+  const stored = getStorage('messaging_theme', 'light');
+  if (stored === 'dark') return 'dark';
+  if (stored === 'light') return 'light';
+  return 'light';
 };
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(resolveInitialTheme);
 
   useEffect(() => {
-    setStorage('messaging_theme', theme);
+    const safeTheme = theme === 'dark' ? 'dark' : 'light';
+    setStorage('messaging_theme', safeTheme);
 
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const resolvedTheme = theme === 'system' ? (systemDark ? 'dark' : 'light') : theme;
-
-    document.documentElement.classList.toggle('dark', resolvedTheme === 'dark');
-    document.documentElement.style.colorScheme = resolvedTheme;
+    document.documentElement.classList.toggle('dark', safeTheme === 'dark');
+    document.documentElement.style.colorScheme = safeTheme;
   }, [theme]);
 
   useEffect(() => {
