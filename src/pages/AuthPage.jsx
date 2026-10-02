@@ -51,15 +51,15 @@ export default function AuthPage() {
               Demo messaging
             </div>
             <h1 className="mt-8 text-4xl font-semibold text-white">Private chats for teams and friends.</h1>
-            <p className="mt-3 max-w-md text-[#f5dfd5]">This is a client-side demo app using browser localStorage and serverless APIs for Vercel deployment only.</p>
+            <p className="mt-3 max-w-md text-[#f5dfd5]">Simple, focused conversations designed to feel warm and easy to use.</p>
           </div>
 
           <div className="rounded-3xl border border-white/10 bg-black/10 p-5 backdrop-blur-sm">
             <div className="flex items-center gap-3">
               <div className="rounded-2xl bg-white/15 p-3 text-[#fee9e0]"><MessageCircleHeart className="h-5 w-5" /></div>
               <div>
-                <p className="text-lg font-semibold text-white">Warm, human, and local</p>
-                <p className="text-sm text-[#f0d3c8]">No external database required.</p>
+                <p className="text-lg font-semibold text-white">Warm, human, and easy</p>
+                <p className="text-sm text-[#f0d3c8]">Built for everyday connection.</p>
               </div>
             </div>
           </div>
